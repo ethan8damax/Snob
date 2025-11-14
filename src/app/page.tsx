@@ -8,7 +8,8 @@ export default function Home() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: ''
+    phone: '',
+    favoriteCoffeeShop: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{ 
@@ -53,7 +54,7 @@ export default function Home() {
         type: 'success', 
         message: 'Consider yourself officially on the list.' 
       });
-      setFormData({ name: '', email: '', phone: '' });
+      setFormData({ name: '', email: '', phone: '', favoriteCoffeeShop: '' });
       
       // Keep modal open after successful submission
       // User needs to close it manually
@@ -165,7 +166,7 @@ export default function Home() {
             <button
               onClick={closeModal}
               disabled={isSubmitting}
-              className="absolute top-4 right-4 text-[#471405] hover:text-[#bf711e] disabled:opacity-50"
+              className="absolute top-4 right-4 text-[#07899b] hover:text-[#067a8a] disabled:opacity-50"
               aria-label="Close"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -173,7 +174,9 @@ export default function Home() {
               </svg>
             </button>
 
-            <h2 className="text-3xl text-center font-extrabold text-[#bf711e] mb-6">Get Early Access</h2>
+            <h2 className="italic text-center text-4xl font-[900] leading-tight tracking-tighter text-[#bf711e] mb-6">
+               Get early access.
+            </h2>
             
             {submitStatus.type === 'success' ? (
               <div className="text-center py-4">
@@ -238,6 +241,21 @@ export default function Home() {
                     placeholder="(123) 456-7890"
                   />
                 </div>
+
+                <div>
+                  <label htmlFor="favoriteCoffeeShop" className="block text-sm font-medium text-[#471405] mb-1">
+                    Favorite Coffee Shop Right Now
+                  </label>
+                  <input
+                    type="text"
+                    id="favoriteCoffeeShop"
+                    name="favoriteCoffeeShop"
+                    value={formData.favoriteCoffeeShop}
+                    onChange={handleInputChange}
+                    className="w-full px-0 py-2 bg-transparent border-0 border-b border-[#471405] rounded-none focus:ring-0 focus:border-b-2 focus:border-[#07899b] focus:outline-none focus:ring-0 focus:shadow-none"
+                    placeholder="e.g., Stumptown, East Pole, PERC"
+                  />
+                </div>
                 
                 <div className="pt-2">
                   <button
@@ -253,7 +271,7 @@ export default function Home() {
                         </svg>
                         Submitting...
                       </span>
-                    ) : 'Get Notified'}
+                    ) : 'Submit'}
                   </button>
                 </div>
               </form>

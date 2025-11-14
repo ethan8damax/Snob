@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabaseAdmin";
 
 export async function POST(request: Request) {
-  const { name, email, phone } = await request.json();
+  const { name, email, phone, favoriteCoffeeShop } = await request.json();
 
   // Validate required fields:
   if (!email) {
@@ -16,6 +16,7 @@ export async function POST(request: Request) {
     name,
     email,
     phone,
+    favorite_coffee_shop: favoriteCoffeeShop,
   });
 
   if (error) {
