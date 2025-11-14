@@ -1,9 +1,5 @@
 @import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* Style autofilled inputs */
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
