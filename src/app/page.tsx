@@ -77,7 +77,7 @@ export default function Home() {
   };
 
   return (
-    <main className="relative flex min-h-dvh flex-col justify-center overflow-hidden">
+    <main className="relative flex min-h-dvh flex-col overflow-hidden">
       {/* Background image via Next/Image */}
       <div className="absolute inset-0 -z-10">
         <Image
@@ -92,8 +92,8 @@ export default function Home() {
       </div>
 
       {/* Top rail phrases */}
-      <div className="w-full px-28 py-7 text-sm tracking-wide text-white/80 drop-shadow-sm md:text-base">
-        <div className="flex items-center justify-between">
+      <div className="w-full px-4 sm:px-8 lg:px-28 py-2 sm:py-4 md:py-5 text-xs sm:text-sm md:text-base tracking-wide text-white/80 drop-shadow-sm">
+        <div className="flex items-center justify-between gap-4">
           <span className="whitespace-nowrap">IT'S OK TO BE A SNOB</span>
           <span className="whitespace-nowrap">FOR COFFEE PEOPLE</span>
           <span className="whitespace-nowrap max-sm:hidden">IT'S OK TO BE A SNOB</span>
@@ -102,26 +102,26 @@ export default function Home() {
       </div>
 
       {/* Main content */}
-      <section className="w-full px-28 grid grid-cols-1 items-center gap-20 py-20 md:py-30 lg:grid-cols-2 lg:gap-16">
+      <section className="flex-1 w-full px-4 sm:px-8 lg:pl-28 lg:pr-0 flex flex-col lg:flex-row items-center lg:items-center justify-between gap-10 sm:gap-14 lg:gap-16 py-6 sm:py-8 md:py-10 lg:py-12">
         {/* Left copy block */}
-        <div>
-          <h1 className="space-y-[-10px] text-4xl font-[900] leading-tight tracking-tight text-[#bf711e] sm:text-5xl md:text-[60px]">
+        <div className="max-w-xl">
+          <h1 className="space-y-[-10px] text-3xl sm:text-4xl md:text-[52px] lg:text-[60px] font-[900] leading-tight tracking-tight text-[#bf711e]">
             <span className="block">Find coffee</span>
             <span className="block whitespace-nowrap">worth the detour</span>
           </h1>
           <div className="mt-3 space-y-1">
-            <div className="w-[320px] sm:w-[380px] md:w-[440px]">
-              <p className="font-[700] text-[#e1dfca] text-2xl sm:text-3xl md:text-[40px] tracking-tight whitespace-nowrap">
+            <div className="w-full max-w-[320px] sm:max-w-[380px] md:max-w-[440px]">
+              <p className="font-[700] text-[#e1dfca] text-xl sm:text-2xl md:text-[32px] lg:text-[40px] tracking-tight whitespace-nowrap">
                 Curated by coffee people
               </p>
             </div>
-            <div className="w-[320px] sm:w-[380px] md:w-[440px]">
-              <p className="font-[300] text-[#e1dfca] text-2xl sm:text-3xl md:text-[37px] tracking-tighter whitespace-nowrap">
+            <div className="w-full max-w-[320px] sm:max-w-[380px] md:max-w-[440px]">
+              <p className="font-[300] text-[#e1dfca] text-xl sm:text-2xl md:text-[30px] lg:text-[37px] tracking-tighter whitespace-nowrap">
                 Get notified when we launch
               </p>
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="mt-6 px-8 py-3 bg-transparent border border-[#e1dfca] text-[#e1dfca] rounded-full font-medium transition-colors duration-200 hover:bg-[#e1dfca]/10 focus:outline-none focus:ring-0 focus:ring-offset-0"
+                className="mt-5 sm:mt-6 px-6 sm:px-8 py-3 bg-transparent border border-[#e1dfca] text-[#e1dfca] rounded-full font-medium transition-colors duration-200 hover:bg-[#e1dfca]/10 focus:outline-none focus:ring-0 focus:ring-offset-0"
               >
                 Notify Me
               </button>
@@ -130,21 +130,21 @@ export default function Home() {
         </div>
 
         {/* Right brand wordmark (SVG) */}
-        <div className="flex items-center justify-end">
+        <div className="flex items-center justify-center lg:justify-end w-full lg:w-auto">
           <Image
             src="/snob-wordmark.svg"
             alt="Snob wordmark"
             width={800}
             height={240}
             priority
-            className="h-auto w-[60vw] max-w-[720px] lg:w-[30vw]"
+            className="h-auto lg:mr-20 w-[70vw] max-w-[520px] sm:w-[60vw] sm:max-w-[620px] lg:w-[30vw] lg:max-w-[720px]"
           />
         </div>
       </section>
 
       {/* Bottom rail phrases */}
-      <div className="w-full px-28 py-7 text-sm tracking-wide text-white/80 drop-shadow-sm md:text-base">
-        <div className="flex items-center justify-between">
+      <div className="w-full px-4 sm:px-8 lg:px-28 py-2 sm:py-4 md:py-5 text-xs sm:text-sm md:text-base tracking-wide text-white/80 drop-shadow-sm">
+        <div className="flex items-center justify-between gap-4">
           <span className="whitespace-nowrap">FOR COFFEE PEOPLE</span>
           <span className="whitespace-nowrap">IT'S OK TO BE A SNOB</span>
           <span className="whitespace-nowrap max-sm:hidden">FOR COFFEE PEOPLE</span>
@@ -162,7 +162,7 @@ export default function Home() {
           ></div>
           
           {/* Modal Content */}
-          <div className="relative w-full max-w-md bg-[#e1dfca] rounded-2xl p-8 shadow-xl">
+          <div className="relative w-full max-w-md bg-[#e1dfca] rounded-2xl p-6 sm:p-7 md:p-8 shadow-xl">
             <button
               onClick={closeModal}
               disabled={isSubmitting}
@@ -174,7 +174,7 @@ export default function Home() {
               </svg>
             </button>
 
-            <h2 className="italic text-center text-4xl font-[900] leading-tight tracking-tighter text-[#bf711e] mb-6">
+            <h2 className="italic text-center text-2xl sm:text-3xl md:text-4xl font-[900] leading-tight tracking-tighter text-[#bf711e] mb-4 sm:mb-5 md:mb-6">
                Get early access.
             </h2>
             
