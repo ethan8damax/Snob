@@ -51,16 +51,12 @@ export default function Home() {
 
       setSubmitStatus({ 
         type: 'success', 
-        message: 'Thank you! We\'ll be in touch soon.' 
+        message: 'Consider yourself officially on the list.' 
       });
       setFormData({ name: '', email: '', phone: '' });
       
-      // Close modal after 2 seconds on success
-      setTimeout(() => {
-        setIsModalOpen(false);
-        // Reset status after closing
-        setTimeout(() => setSubmitStatus({ type: null, message: '' }), 300);
-      }, 2000);
+      // Keep modal open after successful submission
+      // User needs to close it manually
     } catch (error) {
       setSubmitStatus({ 
         type: 'error', 
@@ -124,7 +120,7 @@ export default function Home() {
               </p>
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="mt-6 px-8 py-3 bg-[#07899b] hover:bg-[#067a8a] text-[#e1dfca] rounded-full font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#07899b] focus:ring-offset-2 focus:ring-offset-[#e1dfca]"
+                className="mt-6 px-8 py-3 bg-transparent border border-[#e1dfca] text-[#e1dfca] rounded-full font-medium transition-colors duration-200 hover:bg-[#e1dfca]/10 focus:outline-none focus:ring-0 focus:ring-offset-0"
               >
                 Notify Me
               </button>
@@ -165,7 +161,7 @@ export default function Home() {
           ></div>
           
           {/* Modal Content */}
-          <div className="relative w-full max-w-md bg-[#e1dfca] rounded-2xl p-8 border-2 border-[#471405] shadow-xl">
+          <div className="relative w-full max-w-md bg-[#e1dfca] rounded-2xl p-8 shadow-xl">
             <button
               onClick={closeModal}
               disabled={isSubmitting}
@@ -177,21 +173,22 @@ export default function Home() {
               </svg>
             </button>
 
-            <h2 className="text-2xl font-bold text-[#471405] mb-6">Get Early Access</h2>
+            <h2 className="text-3xl text-center font-extrabold text-[#bf711e] mb-6">Get Early Access</h2>
             
             {submitStatus.type === 'success' ? (
               <div className="text-center py-4">
-                <div className="text-green-600 mb-2">
+                <div className="text-[#07899b] mb-2">
                   <svg className="w-12 h-12 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                   </svg>
-                  <p className="text-lg font-medium">{submitStatus.message}</p>
+                  <p className="text-lg font-medium">Consider yourself officially on the list.</p>
+                  <p className="text-lg font-medium">Now go gather the other coffee snobs.</p>
                 </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 {submitStatus.type === 'error' && (
-                  <div className="p-3 bg-red-50 text-red-700 rounded-md text-sm">
+                  <div className="p-3 bg-blue-50 text-[#07899b] rounded-md text-sm">
                     {submitStatus.message}
                   </div>
                 )}
@@ -206,7 +203,7 @@ export default function Home() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-[#471405] rounded-md focus:ring-2 focus:ring-[#07899b] focus:border-transparent"
+                    className="w-full px-0 py-2 bg-transparent border-0 border-b border-[#471405] rounded-none focus:ring-0 focus:border-b-2 focus:border-[#07899b] focus:outline-none focus:ring-0 focus:shadow-none"
                     placeholder="Your name"
                   />
                 </div>
@@ -222,7 +219,7 @@ export default function Home() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-2 border border-[#471405] rounded-md focus:ring-2 focus:ring-[#07899b] focus:border-transparent"
+                    className="w-full px-0 py-2 bg-transparent border-0 border-b border-[#471405] rounded-none focus:ring-0 focus:border-b-2 focus:border-[#07899b] focus:outline-none focus:ring-0 focus:shadow-none"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -237,7 +234,7 @@ export default function Home() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-2 border border-[#471405] rounded-md focus:ring-2 focus:ring-[#07899b] focus:border-transparent"
+                    className="w-full px-0 py-2 bg-transparent border-0 border-b border-[#471405] rounded-none focus:ring-0 focus:border-b-2 focus:border-[#07899b] focus:outline-none focus:ring-0 focus:shadow-none"
                     placeholder="(123) 456-7890"
                   />
                 </div>
@@ -262,9 +259,6 @@ export default function Home() {
               </form>
             )}
             
-            <p className="mt-4 text-xs text-[#471405]/70 text-center">
-              We respect your privacy. Unsubscribe at any time.
-            </p>
           </div>
         </div>
       )}

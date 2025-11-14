@@ -19,6 +19,12 @@ export async function POST(request: Request) {
   });
 
   if (error) {
+    if (error.code === '23505' && error.message.includes('early_access_email_key')) {
+      return NextResponse.json(
+        { error: "Looks like you're already on the list — overachiever." },
+        { status: 400 }
+      );
+    }
     return NextResponse.json(
       { error: error.message },
       { status: 400 }
