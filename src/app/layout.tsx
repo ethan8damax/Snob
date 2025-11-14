@@ -12,19 +12,19 @@ export const metadata: Metadata = {
 const area = localFont({
   src: [
     {
-      path: "../../public/fonts/area-normal/fonnts.com-Area_Normal_Regular.otf",
-      weight: "500",
+      path: "../../public/fonts/area-normal/fonnts.com-Area_Inktrap_Regular.otf",
+      weight: "700",
       style: "normal",
     },
     {
-      path: "../../public/fonts/area-normal/fonnts.com-Area_Extended_ExtraBold.otf",
-      weight: "800",
-      style: "italic",
+      path: "../../public/fonts/area-normal/fonnts.com-Area_Normal_SemiBold.otf",
+      weight: "900",
+      style: "bold",
     },
     {
-      path: "../../public/fonts/area-normal/fonnts.com-Area_Normal_Thin.otf",
+      path: "../../public/fonts/area-normal/fonnts.com-Area_Inktrap_Thin.otf",
       weight: "100",
-      style: "normal",
+      style: "thin",
     },
   ],
   display: "swap",

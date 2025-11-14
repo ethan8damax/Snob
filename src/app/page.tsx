@@ -162,7 +162,7 @@ export default function Home() {
           ></div>
           
           {/* Modal Content */}
-          <div className="relative w-full max-w-md bg-[#e1dfca] rounded-2xl p-6 sm:p-7 md:p-8 shadow-xl">
+          <div className="relative w-full max-w-md bg-[#471405] rounded-2xl p-6 sm:p-7 md:p-8 shadow-xl">
             <button
               onClick={closeModal}
               disabled={isSubmitting}
@@ -174,7 +174,7 @@ export default function Home() {
               </svg>
             </button>
 
-            <h2 className="italic text-center text-2xl sm:text-3xl md:text-4xl font-[900] leading-tight tracking-tighter text-[#bf711e] mb-4 sm:mb-5 md:mb-6">
+            <h2 className="italic text-center text-2xl sm:text-3xl md:text-4xl font-[900] leading-tight tracking-tighter text-[#e1dfca] mb-4 sm:mb-5 md:mb-6">
                Get early access.
             </h2>
             
@@ -191,13 +191,13 @@ export default function Home() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 {submitStatus.type === 'error' && (
-                  <div className="p-3 bg-blue-50 text-[#07899b] rounded-md text-sm">
+                  <div className="p-3 bg-[#07899b] text-[#e1dfca] rounded-md text-sm">
                     {submitStatus.message}
                   </div>
                 )}
                 
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-[#471405] mb-1">
+                  <label htmlFor="name" className="block text-sm font-medium text-[#e1dfca] mb-1">
                     Full Name
                   </label>
                   <input
@@ -206,14 +206,14 @@ export default function Home() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-0 py-2 bg-transparent border-0 border-b border-[#471405] rounded-none focus:ring-0 focus:border-b-2 focus:border-[#07899b] focus:outline-none focus:ring-0 focus:shadow-none"
+                    className="w-full px-0 py-2 bg-transparent border-0 border-b border-[#e1dfca] rounded-none text-[#e1dfca] placeholder:text-[#e1dfca]/60 focus:ring-0 focus:border-b-2 focus:border-[#07899b] focus:outline-none focus:ring-0 focus:shadow-none"
                     placeholder="Your name"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-[#471405] mb-1">
-                    Email <span className="text-red-500">*</span>
+                  <label htmlFor="email" className="block text-sm font-medium text-[#e1dfca] mb-1">
+                    Email <span className="text-red-400">*</span>
                   </label>
                   <input
                     type="email"
@@ -222,13 +222,13 @@ export default function Home() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-0 py-2 bg-transparent border-0 border-b border-[#471405] rounded-none focus:ring-0 focus:border-b-2 focus:border-[#07899b] focus:outline-none focus:ring-0 focus:shadow-none"
+                    className="w-full px-0 py-2 bg-transparent border-0 border-b border-[#e1dfca] rounded-none text-[#e1dfca] placeholder:text-[#e1dfca]/60 focus:ring-0 focus:border-b-2 focus:border-[#07899b] focus:outline-none focus:ring-0 focus:shadow-none"
                     placeholder="your@email.com"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-[#471405] mb-1">
+                  <label htmlFor="phone" className="block text-sm font-medium text-[#e1dfca] mb-1">
                     Phone (optional)
                   </label>
                   <input
@@ -237,13 +237,13 @@ export default function Home() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-0 py-2 bg-transparent border-0 border-b border-[#471405] rounded-none focus:ring-0 focus:border-b-2 focus:border-[#07899b] focus:outline-none focus:ring-0 focus:shadow-none"
+                    className="w-full px-0 py-2 bg-transparent border-0 border-b border-[#e1dfca] rounded-none text-[#e1dfca] placeholder:text-[#e1dfca]/60 focus:ring-0 focus:border-b-2 focus:border-[#07899b] focus:outline-none focus:ring-0 focus:shadow-none"
                     placeholder="(123) 456-7890"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="favoriteCoffeeShop" className="block text-sm font-medium text-[#471405] mb-1">
+                  <label htmlFor="favoriteCoffeeShop" className="block text-sm font-medium text-[#e1dfca] mb-1">
                     Favorite Coffee Shop Right Now
                   </label>
                   <input
@@ -252,7 +252,7 @@ export default function Home() {
                     name="favoriteCoffeeShop"
                     value={formData.favoriteCoffeeShop}
                     onChange={handleInputChange}
-                    className="w-full px-0 py-2 bg-transparent border-0 border-b border-[#471405] rounded-none focus:ring-0 focus:border-b-2 focus:border-[#07899b] focus:outline-none focus:ring-0 focus:shadow-none"
+                    className="w-full px-0 py-2 bg-transparent border-0 border-b border-[#e1dfca] rounded-none text-[#e1dfca] placeholder:text-[#e1dfca]/60 focus:ring-0 focus:border-b-2 focus:border-[#07899b] focus:outline-none focus:ring-0 focus:shadow-none"
                     placeholder="e.g., Stumptown, East Pole, PERC"
                   />
                 </div>
@@ -261,7 +261,7 @@ export default function Home() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-3 px-4 bg-[#07899b] hover:bg-[#067a8a] text-white font-medium rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#07899b] disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full py-3 px-4 bg-[#bf711e] hover:bg-[#a45f16] text-[#e1dfca] font-medium rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#bf711e] focus:ring-offset-[#471405] disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <span className="flex items-center justify-center">
@@ -271,7 +271,9 @@ export default function Home() {
                         </svg>
                         Submitting...
                       </span>
-                    ) : 'Submit'}
+                    ) : (
+                     <span className="italic">SUBMIT</span>
+                    )}
                   </button>
                 </div>
               </form>
