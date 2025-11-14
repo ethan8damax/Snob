@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "coffee-snob-coming-soon",
+  title: "Coffee Snob Coming Soon",
   icons: {
     icon: "/snob-wordmark.svg",
   },
