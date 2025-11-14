@@ -4,7 +4,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "coffee-snob-coming-soon",
-  description: "",
+  icons: {
+    icon: "/snob-wordmark.svg",
+  },
 };
 
 const area = localFont({
