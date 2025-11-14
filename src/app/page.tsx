@@ -102,9 +102,9 @@ export default function Home() {
       </div>
 
       {/* Main content */}
-      <section className="flex-1 w-full px-4 sm:px-8 lg:pl-28 lg:pr-0 flex flex-col lg:flex-row items-center lg:items-center justify-between gap-10 sm:gap-14 lg:gap-16 py-6 sm:py-8 md:py-10 lg:py-12">
+      <section className="flex-1 w-full px-4 sm:px-8 lg:pl-28 lg:pr-0 flex flex-col-reverse lg:flex-row items-center lg:items-center justify-between gap-10 sm:gap-14 lg:gap-16 py-6 sm:py-8 md:py-10 lg:py-12">
         {/* Left copy block */}
-        <div className="max-w-xl">
+        <div className="max-w-xl mb-20 lg:mb-0">
           <h1 className="space-y-[-10px] text-3xl sm:text-4xl md:text-[52px] lg:text-[60px] font-[900] leading-tight tracking-tight text-[#bf711e]">
             <span className="block">Find coffee</span>
             <span className="block whitespace-nowrap">worth the detour</span>
@@ -130,7 +130,7 @@ export default function Home() {
         </div>
 
         {/* Right brand wordmark (SVG) */}
-        <div className="flex items-center justify-center lg:justify-end w-full lg:w-auto">
+        <div className="flex items-center justify-center lg:justify-end w-full lg:w-auto mt-8 lg:mt-0">
           <Image
             src="/snob-wordmark.svg"
             alt="Snob wordmark"
